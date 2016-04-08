@@ -8,6 +8,7 @@ class Cube extends Model
 {
     public $data_t;
     public $string;
+    public $queries;
 
     public function setString($string='')
     {
@@ -30,6 +31,10 @@ class Cube extends Model
     		}
 
     		$response = $this->validateTestCases();
+
+    		if( $response['error'] == 1 ){
+    			return view('error.error', $response)->render();
+    		}
 
     		dd($response);
 
@@ -89,6 +94,9 @@ class Cube extends Model
 
     public function validateTestCases()
     {
+    	$error['error'] = 0;
+    	$error['message'] = '';
+
     	$index = [];
     	foreach ($this->string as $key => $value) {
     		$explodedStr = explode(' ', $value);
@@ -126,6 +134,13 @@ class Cube extends Model
     		}
     		$j++;
     	}
-    	dd($queries);
+
+    	foreach ($queries as $key => $value) {
+ 			if ( (int)$value['m'] != count($value['queries']) ) {
+				$error['error'] = 1;
+    			$error['message'][] = 'Amount of queries is not equal to M parameter in the testcase number: '.($key+1);
+			}	
+    	}
+    	return $error;
     }
 }
