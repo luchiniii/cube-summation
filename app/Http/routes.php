@@ -15,3 +15,9 @@ Route::get('/', [
 	'as'   => 'home',
 	'uses' => 'HomeController@index'
 ]);
+
+Route::post('/cube/initialization', [
+	'as'         => 'cubeIndex',
+	'middleware' => 'ajax',
+	'uses'       => 'CubeController@initialization'
+]);

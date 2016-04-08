@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Cube\Http\Controllers\Auth;
 
-use App\User;
+use Cube\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use Cube\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

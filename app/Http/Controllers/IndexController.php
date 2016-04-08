@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Cube\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use Cube\Http\Requests;
 
 class IndexController extends Controller
 {

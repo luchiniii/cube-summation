@@ -12,7 +12,7 @@
 				<textarea name="input" id="input" cols="30" rows="10" class="form-control"></textarea>
 			</div>
 			<div class="form-group text-center">
-				<input type="button" value="Submit" class="btn-success btn">
+				<input id="send" type="button" value="Submit" class="btn-success btn">
 			</div>
 		</div>
 	</div>

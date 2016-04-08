@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Cube\Events;
 
 abstract class Event
 {
